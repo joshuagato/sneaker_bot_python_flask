@@ -30,8 +30,8 @@ from controllers.PurchaseChampssports import PurchaseChampssports
 CORS(app)
 
 api = Api(app)
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/fillybot'
+# dialect+driver://username:password@host:port/database
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/fillybot'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:hams4444@sneakerbot.ciiwjmf6az4h.us-west-2.rds.amazonaws.com/fillybot'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

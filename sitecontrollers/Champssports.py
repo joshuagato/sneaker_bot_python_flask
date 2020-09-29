@@ -47,7 +47,7 @@ class Champssports:
         driver = webdriver.Chrome()
         # driver = webdriver.Chrome(ChromeDriverManager().install())
         print('Chrome Initialized')
-        
+
         driver.get(url)
         print('Got Url')
 
@@ -77,14 +77,14 @@ class Champssports:
         driver.get_screenshot_as_file("screenshots/champssports/screenshot3.png")
 
         fill_mailing_address_form(driver, wait, user_details, state_name, 'Address Details Provided')
-        
+
         close_all_the_modals(driver)
         save_form_and_continue(driver, 'Save and Continue Clicked')
         driver.get_screenshot_as_file("screenshots/champssports/screenshot4.png")
 
         close_all_the_modals(driver)
         fake_wait(wait)
-        
+
         driver.switch_to.default_content()
         all_frames = driver.find_elements_by_tag_name('iframe')
 
@@ -94,7 +94,7 @@ class Champssports:
         fill_card_details(driver, 'encryptedSecurityCode', user_details['card_cvv'], all_frames)
 
         place_order(wait, 'Place Order Clicked')
-        
+
         partial_update_task(taskId, 'Ordered')
         driver.get_screenshot_as_file("screenshots/champssports/screenshot5.png")
         driver.quit()

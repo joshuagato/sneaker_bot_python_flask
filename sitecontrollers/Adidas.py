@@ -52,7 +52,7 @@ class Adidas:
         product_summary = {
             'url': derived_url, 'size': product_size, 'quantity': product_quantity
         }
-        
+
         return self.get_product_page(product_summary, user_details, taskId)
         # purchase = pool.apply_async(self.get_product_page, args=(product_summary, user_details))
         # return multiprocessing.cpu_count()

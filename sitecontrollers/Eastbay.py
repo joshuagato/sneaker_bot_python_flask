@@ -21,7 +21,7 @@ from utility_functions.proxies import proxies
 
 class Eastbay:
     """docstring for Eastbay."""
-  
+
     def generate_url(self, product_details, user_details, taskId):
         product_name = product_details.get('product_name').lower().replace("'", '').replace(' - ', '-').replace(' ', '-').replace('---', '-').replace('_', '-')
 
@@ -47,10 +47,10 @@ class Eastbay:
         driver = webdriver.Chrome()
         # driver = webdriver.Chrome(ChromeDriverManager().install())
         print('Chrome Initialized')
-        
+
         driver.get(url)
         print('Got Url')
-        
+
         wait = WebDriverWait(driver, 40)
         print('Wait Initialized')
         driver.get_screenshot_as_file("screenshots/eastbay/screenshot1.png")
@@ -77,14 +77,14 @@ class Eastbay:
         driver.get_screenshot_as_file("screenshots/eastbay/screenshot3.png")
 
         fill_mailing_address_form(driver, wait, user_details, state_name, 'Address Details Provided')
-        
+
         close_all_the_modals(driver)
         save_form_and_continue(driver, 'Save and Continue Clicked')
         driver.get_screenshot_as_file("screenshots/eastbay/screenshot4.png")
 
         close_all_the_modals(driver)
         fake_wait(wait)
-        
+
         driver.switch_to.default_content()
         all_frames = driver.find_elements_by_tag_name('iframe')
 

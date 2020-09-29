@@ -51,6 +51,7 @@ api.add_resource(PurchaseEastbay, '/eastbay')
 api.add_resource(PurchaseFootlocker, '/footlocker')
 api.add_resource(PurchaseChampssports, '/champssports')
 
+
 @app.route('/', methods=['GET'])
 def hello_world():
     return "Fillybot welcomes you"

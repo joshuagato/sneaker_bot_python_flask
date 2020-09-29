@@ -1,9 +1,10 @@
 from utilities.flask_configs import app, db, Api, jsonify, request
 from flask_cors import CORS
 
-import pymysql
+# import pymysql
+import psycopg2
 from sqlalchemy import desc
-pymysql.install_as_MySQLdb()
+# pymysql.install_as_MySQLdb()
 
 from models.profile_model import Profile, profile_schema, profiles_schema
 from models.task_model import Task, task_schema, tasks_schema
@@ -32,6 +33,7 @@ CORS(app)
 api = Api(app)
 # dialect+driver://username:password@host:port/database
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/fillybot'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:ITCstd3712@localhost/sneakerbot'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:hams4444@sneakerbot.ciiwjmf6az4h.us-west-2.rds.amazonaws.com/fillybot'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

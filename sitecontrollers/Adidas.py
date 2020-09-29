@@ -50,7 +50,7 @@ class Adidas:
         product_quantity = product_details.get('product_quantity')
 
         product_summary = {
-        'url': derived_url, 'size': product_size, 'quantity': product_quantity
+            'url': derived_url, 'size': product_size, 'quantity': product_quantity
         }
         
         return self.get_product_page(product_summary, user_details, taskId)

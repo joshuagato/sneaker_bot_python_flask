@@ -73,6 +73,6 @@ def get_tasks(id):
     return jsonify({'success': True, 'tasks': tasks}), 200
 
 
-# if __name__  == "__main__":
-#     print('\n')
-#     app.run(debug=True, use_reloader=True, threaded=True)
+if __name__  == "__main__":
+    print('\n')
+    app.run(debug=True, use_reloader=True, threaded=True)
